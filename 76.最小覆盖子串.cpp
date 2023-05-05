@@ -24,9 +24,9 @@ public:
         //利用滑动窗口的方式遍历s字符串这边的r表示字符串S的右边界
         for (int r = 0;r < s.size();++r) {
             if (flag[s[r]]) {
-                if (--chars[s[r]] >= 0){
+                if (--chars[s[r]] >= 0) {
                     ++cnt;
-                    }
+                }
                 //如果这会s中已经全部满足包含T中的所有条件--更新左边界和最小size
                 while (cnt == t.size()) {
                     if (r - l + 1 < min_size) {
@@ -47,8 +47,8 @@ public:
 // @lc code=end
 int main()
 {
-    string s="afhkfha";
-    string t="dgvgad";
+    string s = "afhkfha";
+    string t = "dgvgad";
     Solution so;
     string h = so.minWindow(s, t);
 }
