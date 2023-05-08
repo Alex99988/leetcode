@@ -35,7 +35,7 @@ public:
 
     // 深度优先搜索函数
     void dfs(vector<vector<char>>& grid, int i, int j) {
-        // 当下标越界或遇到水域时，返回
+        // 当下标越界或遇到水域时，返回（终止条件）
         if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || grid[i][j] == '0') {
             return;
         }

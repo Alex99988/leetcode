@@ -3,7 +3,10 @@
  *
  * [78] 子集
  */
-
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
 // @lc code=start
 class Solution {
 public:

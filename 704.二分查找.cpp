@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=46 lang=cpp
+ * @lc app=leetcode.cn id=704 lang=cpp
  *
- * [46] 全排列
+ * [704] 二分查找
  */
 #include <iostream>
 #include <vector>
@@ -10,7 +10,7 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-    vector<vector<int>> permute(vector<int>& nums) {
+    int search(vector<int>& nums, int target) {
 
     }
 };
