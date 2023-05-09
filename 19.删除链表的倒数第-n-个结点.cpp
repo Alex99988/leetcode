@@ -25,10 +25,11 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+//利用双指针法进行解决
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-
+        
     }
 };
 // @lc code=end
