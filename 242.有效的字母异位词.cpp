@@ -13,7 +13,21 @@ using namespace std;
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-
+        int record[26] = { 0 };
+        for (char c : s){
+            record[c-'a']++;
+        }
+        for (char c : t) {
+            record[c - 'a']--;
+        }
+        for(int i =0;i<26;i++){
+            if (record[i])
+            {
+                return false;
+            }
+            
+        }
+        return true;
     }
 };
 // @lc code=end
