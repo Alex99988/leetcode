@@ -1,17 +1,14 @@
 /*
- * @lc app=leetcode.cn id=226 lang=cpp
- *交换左右孩子交换的是指针利用前序和后续遍历，不能用中序遍历
- 递归：
- 1、返回值和参数
- 2、确定终止条件
- 3、单层的处理逻辑
- * [226] 翻转二叉树
+ * @lc app=leetcode.cn id=515 lang=cpp
+ *
+ * [515] 在每个树行中找最大值
  */
 #include <vector>
 #include <string>
 #include <stack>
 #include <queue>
 #include <unordered_map>
+#include <limits>
  // #include <priority_queue>
 using namespace std;
 struct TreeNode {
@@ -37,13 +34,25 @@ struct TreeNode {
  */
 class Solution {
 public:
-    TreeNode* invertTree(TreeNode* root) {
-        //递归的方式
-        if(root == NULL) return root;//不一定是根节点
-        swap(root->left,root->right);//这边交换的是指针
-        invertTree(root->left);
-        invertTree(root->right);
-        return root;
+    vector<int> largestValues(TreeNode* root) {
+        queue<TreeNode*> que;
+        vector<int> res;
+        if (root) que.push(root);
+        while (!que.empty())
+        {
+            int size = que.size();
+            int max = INT_MIN;
+            while (size--)
+            {
+                TreeNode* node = que.front();
+                que.pop();
+                max = node->val > max ? node->val : max;
+                if(node->left) que.push(node->left);
+                if(node->right) que.push(node->right);
+            }
+            res.push_back(max);
+        }
+        return res;
     }
 };
 // @lc code=end

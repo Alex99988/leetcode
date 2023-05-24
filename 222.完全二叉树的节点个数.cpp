@@ -1,11 +1,7 @@
 /*
- * @lc app=leetcode.cn id=226 lang=cpp
- *交换左右孩子交换的是指针利用前序和后续遍历，不能用中序遍历
- 递归：
- 1、返回值和参数
- 2、确定终止条件
- 3、单层的处理逻辑
- * [226] 翻转二叉树
+ * @lc app=leetcode.cn id=222 lang=cpp
+ *
+ * [222] 完全二叉树的节点个数
  */
 #include <vector>
 #include <string>
@@ -35,15 +31,20 @@ struct TreeNode {
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+//采用后续遍历的方式更加简洁
 class Solution {
 public:
-    TreeNode* invertTree(TreeNode* root) {
-        //递归的方式
-        if(root == NULL) return root;//不一定是根节点
-        swap(root->left,root->right);//这边交换的是指针
-        invertTree(root->left);
-        invertTree(root->right);
-        return root;
+    //普通二叉树解法
+    int countNodes(TreeNode* root) {
+        //迭代的终止条件_
+        if(root== NULL) return 0;
+        //左-右-中   O(n)
+        return countNodes(root->left)+countNodes(root->right)+1;
+
+        //完全二叉树解法，比较左右递归深度是否相同，之后通过
+        
+
+
     }
 };
 // @lc code=end
